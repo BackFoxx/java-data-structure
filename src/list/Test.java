@@ -52,5 +52,24 @@ public class Test {
         circularLinkedList.append(700); //5
         circularLinkedList.remove(1);
         circularLinkedList.removeItem(600); //6
+
+        CircularDoublyLinkedList<Object> circularDoublyLinkedList = new CircularDoublyLinkedList<>();
+        circularDoublyLinkedList.add(0, 300);
+        circularDoublyLinkedList.add(0, 200);
+        circularDoublyLinkedList.add(0, 100); //1
+
+        circularDoublyLinkedList.append(500);
+        circularDoublyLinkedList.append(600); //2
+
+        circularDoublyLinkedList.remove(3); //3
+
+        circularDoublyLinkedList.add(3, 250);
+        circularDoublyLinkedList.add(1, 50);
+        circularDoublyLinkedList.add(0, 10); //4
+
+        circularDoublyLinkedList.append(700); //5
+
+        circularDoublyLinkedList.remove(1);
+        circularDoublyLinkedList.removeItem(600); //6
     }
 }
