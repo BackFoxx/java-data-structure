@@ -34,5 +34,23 @@ public class Test {
 
         linkedList.remove(1);
         linkedList.removeItem(600);
+
+        CircularLinkedList<Integer> circularLinkedList = new CircularLinkedList<>();
+        circularLinkedList.add(0, 300);
+        circularLinkedList.add(0, 200);
+        circularLinkedList.add(0, 100); //1
+
+        circularLinkedList.append(500);
+        circularLinkedList.append(600); //2
+
+        circularLinkedList.remove(3); //3
+
+        circularLinkedList.add(3, 250);
+        circularLinkedList.add(1, 50);
+        circularLinkedList.add(0, 10); //4
+
+        circularLinkedList.append(700); //5
+        circularLinkedList.remove(1);
+        circularLinkedList.removeItem(600); //6
     }
 }
