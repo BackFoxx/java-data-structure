@@ -24,6 +24,15 @@ public class Test {
         linkedList.append(500);
         linkedList.append(600); //2
 
+        // Iterator 테스트 시작
+
+        LinkedListIterator linkedListIterator = new LinkedListIterator(linkedList);
+        while (linkedListIterator.hasNext()) {
+            System.out.println(linkedListIterator.next().item);
+        }
+
+        // Iterator 테스트 끝
+
         linkedList.remove(3); //3
 
         linkedList.add(3, 250);
