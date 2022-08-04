@@ -7,5 +7,10 @@ public class Test {
         arrayQueue.enqueue("test 2");
         arrayQueue.enqueue("test 3");
         arrayQueue.dequeue();
+
+        LinkedQueue<String> linkedQueue = new LinkedQueue<>();
+        linkedQueue.enqueue("x");
+        linkedQueue.dequeue();
+        linkedQueue.isEmpty();
     }
 }
