@@ -151,6 +151,49 @@ public class Sorting<A> {
         }
     }
 
+    public void shellSort() {
+        for (int h = A.length / 7; h > 5; h = h / 5 - 1) {
+            for (int k = 0; k < h - 1; k++) {
+                stepInsertionSort(k, h);
+            }
+        }
+        stepInsertionSort(0, 1);
+    }
+
+    public int[] countingSort(int K) {
+        int[] cnt = new int[K];
+        for (int i = 0; i < K; i++) {
+            cnt[i] = 0;
+        }
+        for (int i = 0; i < A.length; i++) {
+            cnt[A[i]]++;
+        }
+        cnt[0]--;
+
+        for (int i = 1; i < K; i++) {
+            cnt[i] += cnt[i - 1];
+        }
+
+        int[] B = new int[A.length];
+        for (int i = A.length - 1; i >= 0; i--) {
+            B[cnt[A[i]]] = A[i];
+            cnt[A[i]]--;
+        }
+
+        return B;
+    }
+
+    private void stepInsertionSort(int k, int h) {
+        int j, insItem;
+        for (int i = k + h; i < A.length - 1; i += h) {
+            insItem = A[i];
+            for (j = i - h; j >= 0 && A[j] > insItem; j -= h) {
+                A[j + h] = A[j];
+            }
+            A[j + h] = insItem;
+        }
+    }
+
     @Override
     public String toString() {
         for (int i : A) {

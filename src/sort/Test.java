@@ -11,7 +11,10 @@ public class Test {
 //        sorting.insertionSort();
 //        sorting.mergeSort();
 //        sorting.quickSort();
-        sorting.heapSort();
+//        sorting.heapSort();
+//        sorting.shellSort();
+//        sorting.countingSort(65);
+        
         sorting.toString();
     }
 }
