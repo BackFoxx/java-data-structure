@@ -9,7 +9,8 @@ public class Test {
 //        sorting.selectionSort();
 //        sorting.bubbleSort();
 //        sorting.insertionSort();
-        sorting.mergeSort();
+//        sorting.mergeSort();
+        sorting.quickSort();
         sorting.toString();
     }
 }
