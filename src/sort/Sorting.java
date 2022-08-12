@@ -38,6 +38,18 @@ public class Sorting<A> {
         }
     }
 
+    public void insertionSort() {
+        for (int i = 1; i <= A.length - 1; i++) {
+            int index = i - 1;
+            while (0 <= index && A[index] > A[index + 1]) {
+                int tmp = A[index + 1];
+                A[index + 1] = A[index];
+                A[index] = tmp;
+                index--;
+            }
+        }
+    }
+
     @Override
     public String toString() {
         for (int i : A) {

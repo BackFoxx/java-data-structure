@@ -7,7 +7,8 @@ public class Test {
 
         sorting.toString();
 //        sorting.selectionSort();
-        sorting.bubbleSort();
+//        sorting.bubbleSort();
+        sorting.insertionSort();
         sorting.toString();
     }
 }
