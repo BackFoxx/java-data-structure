@@ -116,6 +116,40 @@ public class Sorting<A> {
         return i + 1;
     }
 
+    public void heapSort() {
+        buildHeap();
+        int tmp;
+        for (int i = A.length - 1; i >= 1; i--) {
+            tmp = A[i];
+            A[i] = A[0];
+            A[0] = tmp;
+            percolateDown(0, i - 1);
+        }
+    }
+
+    public void buildHeap() {
+        if (A.length >= 2) {
+            for (int i = (A.length - 2) / 2; i >= 0; --i) {
+                percolateDown(i, A.length - 1);
+            }
+        }
+    }
+
+    private void percolateDown(int i, int n) {
+        int child = 2 * i + 1;
+        int right = 2 * i + 2;
+        if (child <= n) {
+            if (right <= n && A[child] < A[right]) {
+                child = right;
+            }
+            if (A[i] < A[child]) {
+                int tmp = A[i];
+                A[i] = A[child];
+                A[child] = tmp;
+                percolateDown(child, n);
+            }
+        }
+    }
 
     @Override
     public String toString() {
