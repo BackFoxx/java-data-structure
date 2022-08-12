@@ -183,6 +183,32 @@ public class Sorting<A> {
         return B;
     }
 
+    public void radixSort() {
+        int[] cnt = new int[10];
+        int[] start = new int[10];
+        int[] B = new int[A.length];
+        int max = -1;
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] > max) {
+                max = A[i];
+            }
+        }
+        int numDigits = (int)Math. log10(max) + 1;
+        for(int digit = 1; digit <= numDigits; digit++) {
+            for(int d = 0; d <= 9; d++)
+                cnt[d] = 0;
+            for(int i = 0; i < A.length; i++)
+                cnt[(int)(A[i]/Math.pow(10, digit-1) % 10)]++;
+            start[0] = 0;
+            for(int d = 1; d <= 9; d++)
+                start[d] = start[d-1] + cnt[d-1];
+            for(int i = 0; i < A.length; i++)
+                B[start[(int)(A[i]/Math.pow(10, digit-1)) % 10]++] = A[i];
+            for(int i = 0; i < A.length; i++)
+                A[i] = B[i];
+        }
+    }
+
     private void stepInsertionSort(int k, int h) {
         int j, insItem;
         for (int i = k + h; i < A.length - 1; i += h) {
